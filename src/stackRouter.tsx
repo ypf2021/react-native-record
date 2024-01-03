@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Text, View, Button, StyleSheet } from 'react-native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
+// @ts-ignore
+import Icon from 'react-native-vector-icons/Ionicons'
 
 const Stack = createNativeStackNavigator();
 
@@ -8,6 +10,7 @@ function HomeView(props: any): React.JSX.Element {
     return <>
         <View style={[style.container]}>
             <Text> this is HomeView </Text>
+            <Icon name={'add-circle'} ></Icon>
             <Button 
              title='goto newsPage'
              onPress={() => {props.navigation.navigate('News')}}
@@ -35,7 +38,8 @@ function Index(): React.JSX.Element {
              name='Home' 
              component={HomeView}
              options={{
-                title: 'home页面'
+                title: 'home页面',
+                
              }}
             />
             <Stack.Screen 
